@@ -1,5 +1,6 @@
 builds:
   - binary: godeb
+    main: cmd/godeb/main.go
     goos:
       - darwin
       - linux
