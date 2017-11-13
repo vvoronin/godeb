@@ -1,7 +1,19 @@
+project_name: godeb
+release:
+  github:
+    owner: vvoronin
+    name: godeb
+  name_template: '{{.Tag}}'
+brew:
+  commit_author:
+    name: goreleaserbot
+    email: goreleaser@carlosbecker.com
+  install: bin.install "godeb"
 builds:
-  - binary: godeb
-    main: cmd/godeb/main.go
-    goos:
-      - linux
-    goarch:
-      - amd64
+- goos:
+  - linux
+  goarch:
+  - amd64
+  main: github.com/vvoronin/godeb/cmd/godeb
+  ldflags: "-s"
+  binary: godeb
